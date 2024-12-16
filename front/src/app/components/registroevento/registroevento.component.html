@@ -1,0 +1,146 @@
+<div class = "app-registroevento-container">
+    <body>
+        <div class="fondo">
+            <div class="fondooscuro">
+                <header>
+                    <nav>
+                        <!-- Logotipo y nombre -->
+                        <div class="halloween"></div>
+                        <ul class="logo-nombre">
+                            <span>ESPACIOS</span>
+                            <span>BOLIVIA</span>
+                        </ul>
+                        <!-- Menú principal centrado -->
+                        <ul class="menu">
+                            <li><a href="/bienvenidoreg">INICIO</a></li>
+                            <li><a href="/calendario">CALENDARIO</a></li>
+                        </ul>
+                        <!-- Inicio de sesión y botón a la derecha -->
+                        <div class="right-section">
+                            <ul class="extra-menu">
+                                <li><a href="demostrations.html">usuario</a></li>
+                            </ul>
+                            <div class="halloween"></div>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+            <div class="back-button">
+                <a href="/bienvenidoreg"><img src="/assets/flechavolver.jpg" alt="Volver" title="Volver"></a>
+            </div>
+                <section class="registro-evento">
+                    <h2>Registro de Evento</h2>
+                    <form id = "registroForm" class="formulario" (ngSubmit)="registrarevento()">
+                        <div class="form-group">
+                            <label for="nombre">Nombre del Evento:</label>
+                            <input 
+                            type="text" 
+                            id="nombre"
+                            [(ngModel)] = "nombre" 
+                            name="nombre" 
+                            placeholder="Escribe el nombre del evento" 
+                            required>
+                        </div>
+                        <div class="form-group">
+                            <label for = "tipo_evento"> Tipo de evento:
+                                <select [(ngModel)]="tipo_evento" name="tipo_evento" required>
+                                  <option value="MedioAmbientales">Medio Ambientales</option>
+                                  <option value="Cultural">Cultural</option>
+                                  <option value="Comida">Comida</option>
+                                  <option value="Politica">Política</option>
+                                </select>
+                              </label>                    
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descripcion">descripcion:</label>
+                            <input 
+                            type="text" 
+                            id="descripcion"
+                            [(ngModel)] = "descripcion" 
+                            name="descripcion" 
+                            placeholder="Escribe la descripcion" 
+                            required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_usuario">Nombre de usuario:</label>
+                            <input 
+                            type="text" 
+                            id="id_usuario"
+                            [(ngModel)] = "id_usuario" 
+                            name="id_usuario" 
+                            required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_espacio">Espacio Reservado:</label>
+                            <input 
+                            type="text" 
+                            id="id_espacio"
+                            [(ngModel)] = "id_espacio" 
+                            name="id_espacio" 
+                            required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha_evento">Fecha del Evento:</label>
+                            <input 
+                            type="text" 
+                            id="fecha_evento" 
+                            name="fecha_evento"
+                            [(ngModel)] = "fecha_evento" 
+                            placeholder="aaaa/mm/dd" 
+                            required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="capacidad_personas">Capacidad Personas:</label>
+                            <input
+                            type="number" 
+                            id="capacidad_personas"
+                            [(ngModel)] = "capacidad_personas" 
+                            name="capacidad_personas" 
+                            placeholder="0" 
+                            required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de inicio:</label>
+                            <input
+                            type="number" 
+                            id="hora_inicio"
+                            [(ngModel)] = "hora_inicio" 
+                            name="hora_inicio" 
+                            placeholder="00:00" 
+                            required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fin">Hora de Finalización:</label>
+                            <input
+                            type="number"
+                            id="hora_fin"
+                            [(ngModel)] = "hora_fin" 
+                            name="hora_fin" 
+                            placeholder="00:00" 
+                            required>
+                        </div>
+
+                        <p class="titulo2">Forma de Pago</p>
+                        <div class="tipoUsuario">
+                            <label class="checkbox-item">
+                                <input type="checkbox" class="boton">
+                                <span class="custom-checkbox"></span>
+                                <p class="texto">TRASFERENCIA</p>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit">Continuar</button>
+                        </div>
+                    </form>
+                </section>  
+        </div>
+    </body>
+</div>

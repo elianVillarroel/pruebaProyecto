@@ -1,0 +1,306 @@
+html { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image: url('/assets/fondoiniciosesion.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; 
+}
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Navegación */
+nav {
+    display: contents;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 400px; /* Ajusta los márgenes internos */
+}
+
+/* Logotipo y nombre */
+.logo-nombre, .halloween {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    color: white;
+    font-weight: bold;      /* Hace el texto más destacado */
+}
+.logo span {
+    line-height: 1.2; /* Espaciado entre ESPACIOS y BOLIVIA */
+}
+
+/* Menú principal */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 120px; /* Espacio entre los elementos del menú */
+    margin: 0 auto; /* Centra el menú principal */
+    color: white;
+    text-decoration: underline;
+}
+
+.menu li {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.menu li:hover {
+    background-color: #444;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sección derecha: Inicio de sesión y botón */
+.right-section {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 20px; /* Espacio entre "Inicio de sesión" y el botón */
+}
+
+.extra-menu {
+    list-style: none;
+}
+
+.extra-menu li {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.extra-menu li:hover {
+    background-color: #444;
+}
+
+.extra-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.fondoN {
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 500px;
+    padding: 10px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.titulo2 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    gap: 100px; /* Espacio entre los elementos */
+    position: relative;
+    top: 50px;
+    left: 100px;
+}
+
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Oculta el checkbox predeterminado */
+.checkbox-item input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: black; 
+    border: 2px solid white;
+    border-radius: 3px; 
+    display: inline-block;
+    position: relative;
+    margin-right: 8px; 
+}
+
+/* Marca de verificación blanca cuando está seleccionado */
+.checkbox-item input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid white 2px; 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-item .texto {
+    color: white;
+    margin: 0;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.boton {
+    width: 200px; 
+    padding: 12px 15px;
+    border-radius: 8px;
+    background-color: yellow;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px auto; 
+    display: block; 
+}
+
+.boton:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+
+.tipoUsuario {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 30px; /* Espaciado entre botones */
+    margin: 20px 0; /* Ajusta el margen superior e inferior */
+    padding: 0; /* Elimina posibles conflictos de padding */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.tipo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tipo img {
+    cursor: pointer;
+}
+
+.tipo:hover {
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .fondoN {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .titulo2 {
+        font-size: 14px;
+    }
+
+    input[type="text"] {
+        font-size: 12px;
+    }
+
+    .boton {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.back-button {
+    position: absolute;
+    bottom: 300px; /* Ajusta según sea necesario */
+    left: 150px;  /* Ajusta según sea necesario */
+}
+
+.back-button a img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.back-button a img:hover {
+    transform: scale(1.1);
+}

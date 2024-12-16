@@ -1,0 +1,88 @@
+<div class = "bienvenidoregistro-container">
+  <div class="fondo">
+    <div class="fondooscuro">
+      <header>
+        <nav>
+          <!-- Logotipo y nombre -->
+          <div class="halloween"></div>
+          <ul class="logo-nombre">
+            <span>ESPACIOS</span>
+            <span>BOLIVIA</span>
+          </ul>
+          <!-- Menú principal centrado -->
+          <ul class="menu">
+            <li><a href="/iniciopagina">INICIO</a></li>
+            <li><a href="/calendario">CALENDARIO</a></li>
+          </ul>
+          <!-- Inicio de sesión y botón a la derecha -->
+          <div class="right-section">
+            <ul class="extra-menu">
+              <li><a href="demostrations.html">NOMBRE DE USUARIO</a></li>
+            </ul>
+            <div class="halloween"></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="bienvenido">
+      <h1>BIENVENIDO, A ESPACIOS BOLIVIA</h1>
+      <p>Para el día de hoy tenemos {{eventos.length}} eventos.</p>
+      <p></p>
+      <div id="events-container">
+        <div *ngIf="eventos.length > 0">
+          <div *ngFor="let evento of eventos">
+            <h3>{{ evento.nombre }}</h3>
+            <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+            <p><strong>Hora:</strong> {{ evento.hora_inicio }}:00 - {{ evento.hora_fin }}:00</p>
+            <p><strong>Capacidad:</strong> {{ evento.capacidad_personas }} personas</p>
+            <p><strong>Tipo:</strong> {{ evento.tipo }}</p>
+            <p><strong>Descripción:</strong> {{ evento.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+      <p>Haz click en 'Añadir Evento' para reservar un espacio a utilizar por un evento.</p>
+      <div class="button-container">
+        <button id="add-event-button" class="add-event-button" (click)="abrirModal()" href = "/registroevento">Añadir Evento</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="mostrarModal">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarModal()">&times;</span>
+    <h2>Añadir un nuevo evento</h2>
+    <form (ngSubmit)="addEvento()">
+      <label>
+        Nombre:
+        <input type="text" [(ngModel)]="nuevoEvento.nombre" name="nombre" required />
+      </label>
+      <label>
+        Fecha:
+        <input type="date" [(ngModel)]="nuevoEvento.fecha" name="fecha" required />
+      </label>
+      <label>
+        Hora inicio:
+        <input type="number" [(ngModel)]="nuevoEvento.hora_inicio" name="hora_inicio" required />
+      </label>
+      <label>
+        Hora fin:
+        <input type="number" [(ngModel)]="nuevoEvento.hora_fin" name="hora_fin" required />
+      </label>
+      <label>
+        Capacidad:
+        <input type="number" [(ngModel)]="nuevoEvento.capacidad_personas" name="capacidad" required />
+      </label>
+      <label>
+        Tipo:
+        <input type="text" [(ngModel)]="nuevoEvento.tipo" name="tipo" required />
+      </label>
+      <label>
+        Descripción:
+        <textarea [(ngModel)]="nuevoEvento.descripcion" name="descripcion" required></textarea>
+      </label>
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+</div>
